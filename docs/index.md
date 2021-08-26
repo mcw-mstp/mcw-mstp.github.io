@@ -10,6 +10,10 @@ be made available.
 
 This site was built using [mkdocs](https://www.mkdocs.org) and uses the [material]() theme.
 
+## Layout
+
+I was thinking that the primary pages could run accross the header. 
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.

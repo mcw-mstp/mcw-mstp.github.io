@@ -3,8 +3,12 @@ site_url: httpe://www.google.com
 repo_url: https://github.com/mcw-mstp/mcw-mstp
 
 nav:
-    - Home: index.md
+    - Home: 
+        - Welcome: index.md
+        - News: news.md
     - Singe Cell Seq: single_cell.md
+    - Resources: resources.md
+    - People: people.md
     - Contributing: contributing.md
 
 theme: 
@@ -22,3 +26,8 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mcw-mstp
