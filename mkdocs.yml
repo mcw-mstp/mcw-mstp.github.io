@@ -1,0 +1,24 @@
+site_name: MCW MSTP Code
+site_url: httpe://www.google.com
+repo_url: https://github.com/mcw-mstp/mcw-mstp
+
+nav:
+    - Home: index.md
+    - Singe Cell Seq: single_cell.md
+    - Contributing: contributing.md
+
+theme: 
+  name: material
+  features:
+    - navigation.tabs
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
