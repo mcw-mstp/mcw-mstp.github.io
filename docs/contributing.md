@@ -87,7 +87,7 @@ Finally, this last step submits your changes for review before it is *merged* wi
 Mkdocs is a very convienent tool for building documentation. For working with this site, the only commands you should need are:
 
 * `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build --force` - Build the documentation site. (This pushes the built site to the gh-pages branch). The force option is needed since we hace multiple pages under some of the main headers
+* `mkdocs build -force` - Build the documentation site. (This pushes the built site to the gh-pages branch). The force option is needed since we hace multiple pages under some of the main headers
 * `mkdocs -h` - Print help message and exit.
 
 ## Project layout
