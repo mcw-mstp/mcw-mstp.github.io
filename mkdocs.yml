@@ -13,11 +13,14 @@ nav:
 
 theme: 
   name: material
+  custom_dir: overrides
   features:
     - navigation.tabs
 
 markdown_extensions:
+  - abbr
   - admonition
+  - meta
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.emoji:
