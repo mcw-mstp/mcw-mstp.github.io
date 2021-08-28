@@ -1,0 +1,2 @@
+# Exclude the site building folder
+site/*
