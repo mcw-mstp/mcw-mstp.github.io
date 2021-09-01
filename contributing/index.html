@@ -65,12 +65,20 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo" class="md-skip">
+        <a href="#editing-this-site" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner md-announce">
+          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
+            
+    Take the MSTP programming survey and sign up for a "hands-on" R introduction!
+
+          </div>
+        </aside>
       
     </div>
     
@@ -185,11 +193,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../single_cell/" class="md-tabs__link">
-      Singe Cell Seq
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rna_seq/single_cell/" class="md-tabs__link">
+        Singe Cell Seq
+      </a>
+    </li>
+  
 
       
         
@@ -335,10 +347,49 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../single_cell/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
         Singe Cell Seq
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Singe Cell Seq" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Singe Cell Seq
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq/single_cell/" class="md-nav__link">
+        About
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rna_seq/lect1/lect1/" class="md-nav__link">
+        Intro to scRNA seq
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -414,15 +465,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#1-install-git" class="md-nav__link">
+    1) Install git
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#2-clone-this-repository" class="md-nav__link">
+    2) Clone this Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-a-new-working-branch" class="md-nav__link">
+    3) Create a New Working Branch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-install-mkdocs-optional" class="md-nav__link">
+    4) Install mkdocs (Optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-make-an-edit" class="md-nav__link">
+    5) Make an edit!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-push-changes-to-github" class="md-nav__link">
+    6) Push Changes to Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-make-pull-request-for-official-site" class="md-nav__link">
+    7) Make Pull Request for Official Site
   </a>
   
 </li>
@@ -461,15 +547,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#1-install-git" class="md-nav__link">
+    1) Install git
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#2-clone-this-repository" class="md-nav__link">
+    2) Clone this Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-a-new-working-branch" class="md-nav__link">
+    3) Create a New Working Branch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-install-mkdocs-optional" class="md-nav__link">
+    4) Install mkdocs (Optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-make-an-edit" class="md-nav__link">
+    5) Make an edit!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-push-changes-to-github" class="md-nav__link">
+    6) Push Changes to Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-make-pull-request-for-official-site" class="md-nav__link">
+    7) Make Pull Request for Official Site
   </a>
   
 </li>
@@ -491,14 +612,70 @@
                   </a>
                 
                 
-                <h1 id="demo">Demo</h1>
-<p>A comprehensive list of features can be found at: </p>
-<p><a href="https://squidfunk.github.io/mkdocs-material/reference/abbreviations/">https://squidfunk.github.io/mkdocs-material/reference/abbreviations/</a></p>
-<h2 id="commands">Commands</h2>
+                <h1 id="editing-this-site">Editing This Site</h1>
+<p>This page gives documentation about how to make an edit to this site.</p>
+<h2 id="1-install-git">1) Install <code>git</code></h2>
+<p>If it's not already installed on your system, the first step is to install the <code>git</code> utility. This is what underlies github.com and most collaborative projects across the web. Follow the instructions at the below link to get started</p>
+<p><a href="https://docs.github.com/en/get-started/quickstart/set-up-git">https://docs.github.com/en/get-started/quickstart/set-up-git</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to make a github account so that you can push 
+changes to public repositories</p>
+</div>
+<h2 id="2-clone-this-repository">2) Clone this Repository</h2>
+<p>On your system, open up a folder and change the directory (<code>cd</code> command) to wherever you would like this repository to be saved. Then clone this repository and <code>cd</code> into the directory!</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /home/smazurchuk/Desktop <span class="c1"># or whatever folder you prefer</span>
+git clone https://github.com/mcw-mstp/mcw-mstp.github.io.git
+<span class="nb">cd</span> mcw-mstp.github.io
+</code></pre></div>
+<h2 id="3-create-a-new-working-branch">3) Create a New Working Branch</h2>
+<p>We now have to create a new banch. You can pick whatever name you like for this, and create the branch with the command</p>
+<div class="highlight"><pre><span></span><code>git checkout -b branch-name-here
+</code></pre></div>
+<p>The <code>-b</code> option indicates that you are creating a new branch.</p>
+<h2 id="4-install-mkdocs-optional">4) Install mkdocs (Optional)</h2>
+<div class="admonition info inline end">
+<p class="admonition-title">Info</p>
+<p>Installing this is only necessary to preview changes</p>
+</div>
+<p>In order to generate a live preview of the edits you make to the site, you will need to download a python package called mkdocs. If python or a way of managing python virtual environments is not already installed on your system, there is better documentation <strong>elsewhere</strong> for doing those steps. </p>
+<p>If you have python installed, then simply type:</p>
+<div class="highlight"><pre><span></span><code>pip install mkdocs
+</code></pre></div>
+<p>To see if all the required packages installed, try to serve the webpage
+<div class="highlight"><pre><span></span><code>mkdocs serve
+</code></pre></div></p>
+<p>If there is an error, there might be some extenstions missing. In this case, try the following command</p>
+<div class="highlight"><pre><span></span><code>pip install mkdocs-material-extensions
+</code></pre></div>
+<p>If not, shoot me an email</p>
+<h2 id="5-make-an-edit">5) Make an edit!</h2>
+<p>We suggest that the first edit is adding your name to the <a href="/people.md">contributers</a> page! To do this, open the file <code>people.md</code> file in the docs folder in your favorite <abbr title="Which of course is vim">text editor</abbr>. Then add your name using | as a dividers between table values.</p>
+<div class="highlight"><pre><span></span><code>| Name | Email | Background |
+|---|---|---|
+| Stephen | smazurchuk@mcw.edu | I work mainly with fMRI datasets (imagingn data) and have a strong background in python and Matlab. &lt;br&gt;Also somewhat knowledgeable in some machine learning topics |
+|Dohn Joe  | dj@mcw.edu | A made-up personality |
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you would like for the text in the background section to be broken up over multiple lines,
+make sure to include the <code>&lt;br&gt;</code> text where you would like a line break</p>
+</div>
+<h2 id="6-push-changes-to-github">6) Push Changes to Github</h2>
+<p>This section will perhaps have the <em>strangest</em> instructions for those new to <code>git</code>. Now that you have edited and saved your changes to <code>people.md</code>. The steps are:</p>
+<ol>
+<li><code>git add docs/people.md</code></li>
+<li><code>git commit -m "your message here in qoutes"</code></li>
+<li><code>git push origin branch-name-here</code></li>
+</ol>
+<h2 id="7-make-pull-request-for-official-site">7) Make Pull Request for Official Site</h2>
+<p>Finally, this last step submits your changes for review before it is <em>merged</em> with the main branch. To this, you can go to github.com and when you go to this repository, you should see the ability to click a green button that says "Compare &amp; Pull Request". Follow the steps, and write a description of what your pull request changes on the site. This info will be reviewed and then merged with the site! That's it! </p>
+<hr />
+<h1 id="extra-info">Extra Info</h1>
+<p>Mkdocs is a very convienent tool for building documentation. For working with this site, the only commands you should need are:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
 <li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs gh-deploy --force</code> - Build the documentation site. (This pushes the built site to the gh-pages branch). The force option is needed since we hace multiple pages under some of the main headers</li>
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
 <h2 id="project-layout">Project layout</h2>
@@ -507,6 +684,8 @@ docs/
     index.md  # The documentation homepage.
     ...       # Other markdown pages, images and other files.
 </code></pre>
+<p>A comprehensive list of features that can be used on this site can be found at: </p>
+<p><a href="https://squidfunk.github.io/mkdocs-material/reference/abbreviations/">https://squidfunk.github.io/mkdocs-material/reference/abbreviations/</a></p>
                 
               
               
