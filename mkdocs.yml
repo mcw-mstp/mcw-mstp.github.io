@@ -7,8 +7,8 @@ nav:
         - Welcome: index.md
         - News: news.md
     - Singe Cell Seq: 
-        - About: single_cell.md
-        - Intro to scRNA seq: lect1.md
+        - About: rna_seq/single_cell.md
+        - Intro to scRNA seq: rna_seq/lect1/lect1.md
     - Resources: resources.md
     - People: people.md
     - Contributing: contributing.md
