@@ -1,0 +1,242 @@
+---
+title: "scRNA_seq analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is an R Markdown document. Code can only be written in chunks, which are set off by sets of three tick marks (```).
+
+Spaces between chunks can be used to take notes.
+
+To add a new chunk, click the "Insert" icon towards the top right of the script section of RStudio. Then select "R" from the dropdown menu. Alternatively, press Command + Option + I (Mac) or Control + Alt + I (Windows) on your keyboard.
+
+You can name chunks by typing a name after the letter "r" inside the curly braces. The drop down menu in the bottom left of the script section of RStudio allows you to skip to any chunk, so naming chunks makes it easy to keep track of where you want to skip to in your script.
+
+```{r Install Seurat}
+# Inside a chunk, anything in a line written after a pound sign/hashtag is a comment and will not be run as code
+# Use comments to take notes in line with your code
+
+#install.packages("Seurat")
+#install.packages("tidyverse")
+```
+
+```{r Library}
+# Downloaded packages are not automatically available for use in R
+# The library() function loads packages for use in one session of R
+# If you restart R, you don't need to install the packages again, but you do need to library() them
+
+library(Seurat)
+library(tidyverse)
+```
+
+```{r Rename input files}
+# Seurat expects the input files to be called "barcodes.tsv.gz", "features.tsv.gz", and "matrix.mtx.gz"
+# We first need to rename the downloaded files to make them match these names exactly
+
+file.rename("matrix_files/GSM3701181_GP33_day30_barcodes.tsv.gz", "matrix_files/barcodes.tsv.gz")
+file.rename("matrix_files/GSM3701181_GP33_day30_genes.tsv.gz", "matrix_files/features.tsv.gz")
+file.rename("matrix_files/GSM3701181_GP33_day30_matrix.mtx.gz", "matrix_files/matrix.mtx.gz")
+```
+
+```{r Load data}
+Cl13.raw <- Read10X(data.dir = "matrix_files/")
+
+# Cl13.raw is currently stored as a matrix object in R (matrix of genes and cells)
+# We can check how many cells and genes are available for analysis with the dim() function
+
+dim(Cl13.raw)
+# 27998  1838
+
+# dim() always returns the number of rows, then the number of columns in a matrix or data frame
+# scRNA-seq data is always arranged such that rows are genes and columns are cells
+# Therefore, this dataset has 27,998 genes detected across 1,838 cells
+
+# We need to make a Seurat object from the matrix object Cl13.raw
+
+Cl13 <- CreateSeuratObject(counts = Cl13.raw, project = "Cl13")
+
+# You can also call dim() on Seurat objects to see how many genes and cells are in your dataset
+dim(Cl13)
+# 27998  1838
+```
+
+```{r Quality control}
+# Not all cells are usable for analysis, so we need to filter out low quality cells
+
+# First, have Seurat calculate what percentage of the transcriptome of each cell comes from mitochondrial genes
+# Cells with high percentages of mitochondrial mRNA may be apoptotic
+# Note that all mitochondrial genes being with "mt-", so Seurat can easily find these genes
+Cl13$percent.mt <- PercentageFeatureSet(object = Cl13, pattern = "^mt-")
+
+# View the number of unique genes (nFeature_RNA), number of total transcripts (nCount_RNA), and percent of mitochondrial reads (percent.mt) for each cell
+VlnPlot(object = Cl13, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"))
+
+# Notice how some cells have many more unique genes than most cells
+# These cells may be doublets (two cells captured in the same oil droplet and labeled with the same barcode sequence)
+# We need to remove these cells to prevent contamination
+
+# We generally also remove cells with very few unique genes per cell, as these cells will not provide much information and may decrease the quality of the analysis
+# Cells in this dataset are above the typical minimal threshold (200 genes per cell)
+
+# Live cells will have a low percentage of mitochondrial mRNA, so we also use this metric to filter cells
+# Typical cutoffs for percent.mt are 5-10% depending on how stringent you want your quality control to be and how many cells you can afford to filter out
+
+Cl13 <- subset(Cl13, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 10)
+```
+
+```{r Normalization}
+# Normalize the data - divides the number of reads for each gene in a cell by the total number of reads in that cell
+# Normalization makes reads comparable betwwen cells that had different read depth during sequencing
+Cl13 <- NormalizeData(Cl13)
+
+# Select highly variable features - these will be used for PCA/UMAP
+# Running PCA/UMAP on all genes is computationally intensive and doesn't really improve results
+Cl13 <- FindVariableFeatures(Cl13)
+
+# You can examine the variable features on a plot if you want to see them
+LabelPoints(VariableFeaturePlot(Cl13),
+            points = head(VariableFeatures(Cl13), 10))
+```
+
+```{r Cell cycle and scaling}
+# Load genes for cell cycle regression
+CC_genes <- Seurat::cc.genes.updated.2019
+
+# These genes are currently in human gene format (all caps)
+# We need to change them to mouse gene format (first letter caps, all other letters lowercase)
+CC_genes <- lapply(CC_genes, function(x){
+  paste0(
+  substring(x, 1, 1),
+  tolower(substring(x, 2)))})
+
+# Calculate the cell cycle phase of cells
+Cl13 <- CellCycleScoring(Cl13, s.features = CC_genes$s.genes, g2m.features = CC_genes$g2m.genes)
+# Note that not all cell cycle genes will always be found in each dataset
+
+# Scale the data - scales the expression of each gene across all cells to a range centered at 0 (usually -2 to +2)
+# While scaling, we'll also regress out cell cycle phase scores so these don't impact data scaling
+# By default, Seurat only scales variable genes, which we found with the FindVariableFeatures() function earlier
+Cl13 <- ScaleData(Cl13, vars.to.regress = c("S.Score", "G2M.Score"))
+
+# If you want to scale all genes, for example to generate large heatmaps later, you need to specify this
+# We aren't doing this today for the sake of time, but the command to do so is below
+# Cl13 <- ScaleData(Cl13, features = rownames(Cl13), vars.to.regress = c("S.Score", "G2M.Score"))
+```
+
+```{r UMAP}
+# We need to generate a PCA plot before we contruct a UMAP plot
+# By default, 50 PCs are calculated; you can choose to set fewer PCs manually
+Cl13 <- RunPCA(Cl13, npcs = 30)
+Cl13 <- FindNeighbors(Cl13, dims = 1:30)
+Cl13 <- FindClusters(Cl13, resolution = 0.3)
+Cl13 <- RunUMAP(Cl13, dims = 1:30)
+
+# Show the UMAP plot
+DimPlot(Cl13)
+# Clusters are numbered by decreasing size
+
+# There isn't a set number of PCs to use for PCA or UMAP construction
+# In general, PCs are set between 10 and 50
+# It's usually better to use more PCs than fewer, as too few PCs will drastically alter the data whereas extra PCs will hardly change the overall structure of the data
+# The larger the dataset, the more PCs should be used
+
+# Resolution in FindClusters() doesn't affect the shape of the clusters but does affect the coloring (cluster assignment) of cells
+# Look at what happens when we change only the resolution and recreate the UMAP plot
+Cl13 <- FindClusters(Cl13, resolution = 0.2)
+DimPlot(Cl13)
+
+# Alternatively, we can color the cells based on their cell cycle phase instead of their cluster identity
+DimPlot(Cl13, group.by = "Phase")
+```
+
+```{r Cell purity}
+# Always test to make sure that your cell populations are pure, even if you sequenced FACS-sorted cells (sorting is never perfect)
+# In this case, the cells are supposed to be LCMV GP33-specific CD8 T cells
+# We can examine identity genes with different plots
+VlnPlot(Cl13, features = c("Cd8a", "Cd3e"))
+FeaturePlot(Cl13, features = c("Cd8a", "Cd3e"))
+# All clusters express high levels of Cd3e and CD8a, suggesting that these cells are CD8 T cells
+```
+
+```{r Differential gene expression analysis}
+# If we don't know what genes are important, we can analyze differentially expressed genes (DEGs) in each cluster
+Cl13_markers <- FindAllMarkers(Cl13, only.pos = T)
+# Setting only.pos = T tells Seurat to only look for genes that are upregulated in each cluster
+
+# Let's examine the top 10 DEGs per cluster
+Cl13_markers %>% group_by(cluster) %>% top_n(10, wt = avg_log2FC)
+# Note that gene names don't always match protein names (Pdcd1 = PD-1, Slamf6 = Ly108)
+
+# We can plot some of these genes to visualize how specific they are to each cluster
+VlnPlot(Cl13, features = c("Cxcr6", "Nr4a2", "Cx3cr1", "Zeb2", "Slamf6", "Il7r"))
+DotPlot(Cl13, features = c("Cxcr6", "Nr4a2", "Cx3cr1", "Zeb2", "Slamf6", "Il7r"))
+FeaturePlot(Cl13, features = c("Cxcr6", "Nr4a2", "Cx3cr1", "Zeb2", "Slamf6", "Il7r"))
+RidgePlot(Cl13, features = c("Cxcr6", "Nr4a2", "Cx3cr1", "Zeb2", "Slamf6", "Il7r"))
+
+# Using our knowledge of CD8 T cell biology from the literature and our own experiments, we can determine cluster identities:
+# Cluster 0 - Exhausted cells
+# Cluster 1 - Effector cells
+# Cluster 2 - Progenitor cells
+```
+
+```{r Rename clusters}
+# To make figures easier to follow, we can rename the clusters in our Seurat object
+Cl13 <- RenameIdents(Cl13,
+                     "0" = "Exhausted",
+                     "1" = "Effector",
+                     "2" = "Progenitor")
+
+# Check to make sure the new names are okay
+DimPlot(Cl13)
+```
+
+```{r Save figures}
+# Make a folder for figures
+dir.create("Figures")
+
+# The ggsave() function saves plots into a directory you want in a file format you specify
+# ggsave() automatically saves the last plot run in R, so place this command directly after the plot you want to save and run them together
+# Remember to include the "Figures" in the file path inside ggsave()
+# Tip: In RStudio, you can press the Tab key inside quotation marks to automatically list and select file paths
+
+# UMAP
+# Most plotting functions in Seurat allow you to easily change the colors of the clusters as well
+# Remember that colors are specified in the order that the clusters are listed (by default, clusters are arranged in alphabetical order)
+DimPlot(Cl13, cols = c("gray50", "red", "skyblue"))
+ggsave("Figures/UMAP.png", dpi = 300)
+# dpi specifies the image resolution for PNG files; always save at 300 dpi (the default is 72 dpi, which is lower resolution and not acceptable for publications)
+
+# UMAP colored by cell cycle phase
+DimPlot(Cl13, group.by = "Phase")
+ggsave("Figures/UMAP_cell_cycle.png", dpi = 300)
+
+# FeaturePlot to verify cell purity
+FeaturePlot(Cl13, features = c("Cd3e", "Cd8a"))
+ggsave("Figures/Cell_purity_FeaturePlot.png")
+
+# VlnPlot of major markers defining each subset
+# Rememer to keep the colors you pick consistent if you don't want to use the default colors
+VlnPlot(Cl13, features = c("Pdcd1", "Cx3cr1", "Slamf6"), cols = c("gray50", "red", "skyblue"))
+ggsave("Figures/Cluster_markers_VlnPlot.png", dpi = 300)
+
+# DotPlot of differentially expressed genes from FindAllMarkers() that may be of interest
+# We'll manually set the height and width of this file so the text on the x-axis fits properly
+DotPlot(Cl13, features = c("Pdcd1", "Cxcr6", "Nr4a2", "Cx3cr1", "S1pr5", "Tbx21", "Slamf6", "Il7r", "Tcf7"))
+ggsave("Figures/Cluster_markers_DotPlot.png", dpi = 300, width = 9, height = 5)
+
+# 5 figures in 1 hour
+# Price: $0
+
+# Further analyses can be conducted with the following packages:
+#   Monocle - Psuedotime trajectory analysis
+#   VeloCyto - RNA Velocity
+#   SCENIC - regulon (transcription factor gene regulatory network) analysis
+#   CellPhoneDB - Cell-cell receptor-ligand interactions (currently only available as a Python package)
+#   ggpubr - easy statistical analysis for violin or box plots
+#   novoSpaRc - de novo or atlas-based spatial reconstruction of scRNA-seq data (currently only available as a Python package)
+```
+
+
