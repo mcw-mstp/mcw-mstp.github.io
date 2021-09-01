@@ -6,7 +6,9 @@ nav:
     - Home: 
         - Welcome: index.md
         - News: news.md
-    - Singe Cell Seq: single_cell.md
+    - Singe Cell Seq: 
+        - About: single_cell.md
+        - Intro to scRNA seq: lect1.md
     - Resources: resources.md
     - People: people.md
     - Contributing: contributing.md
@@ -34,3 +36,4 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/mcw-mstp
+  generator: false

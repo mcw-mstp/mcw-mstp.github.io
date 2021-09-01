@@ -3,7 +3,9 @@
 This page gives documentation about how to make an edit to this site.
 
 ## 1) Install `git`
-If it's not already installed on your system, the first step is to install the `git` utility. This is what underlies github.com and 
+If it's not already installed on your system, the first step is to install the `git` utility. This is what underlies github.com and most collaborative projects across the web. Follow the instructions at the below link to get started
+
+<https://docs.github.com/en/get-started/quickstart/set-up-git>
 
 !!! Note
     Make sure to make a github account so that you can push 
@@ -14,7 +16,7 @@ If it's not already installed on your system, the first step is to install the `
 On your system, open up a folder and change the directory (`cd` command) to wherever you would like this repository to be saved. Then clone this repository and `cd` into the directory!
 
 ```shell
-cd /home/smazurchuk/Desktop
+cd /home/smazurchuk/Desktop # or whatever folder you prefer
 git clone https://github.com/mcw-mstp/mcw-mstp.github.io.git
 cd mcw-mstp.github.io
 ```
@@ -82,6 +84,7 @@ This section will perhaps have the *strangest* instructions for those new to `gi
 
 Finally, this last step submits your changes for review before it is *merged* with the main branch. To this, you can go to github.com and when you go to this repository, you should see the ability to click a green button that says "Compare & Pull Request". Follow the steps, and write a description of what your pull request changes on the site. This info will be reviewed and then merged with the site! That's it! 
 
+---
 # Extra Info
 
 Mkdocs is a very convienent tool for building documentation. For working with this site, the only commands you should need are:
