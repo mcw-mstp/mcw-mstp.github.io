@@ -5,25 +5,26 @@ currently taking suggestions for pages and information that you would like
 be made available.
 
 !!! warning
-    This site is currently under construction and is just for demo
-    purposes
+    This site is currently under construction and, as of now, is just 
+    for demo purposes
 
 This site was built using [mkdocs](https://www.mkdocs.org) and uses the [material]() theme.
 
 ## Layout
 
-I was thinking that the primary pages could run accross the header. 
+I was thinking that the primary pages could run accross the header. If you have any suggestions for topics, feel free to edit the site or shoot me an email (or since you are here, message me on the ABACUS slack channel)
 
-## Commands
+## To-do
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+I was thinking it might be nice if people try the process of editing this site. Therefore it'd be great to have people get back to me about the process
 
-## Project layout
+- [x] Have people add their names to the site
+    * [ ] Verify that 'contributing' instructions make sense
+- [ ] Make central one-drive folder
+- [ ] Add previous Abacus resources
+- [ ] Maybe add survey results somewhere?
+- [ ] Figure out where tutorials should go
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+Feel free to give feedback <smazurchuk@mcw.edu>
+

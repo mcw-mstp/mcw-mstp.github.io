@@ -1,8 +1,18 @@
 # Editing This Site
 
-This page gives documentation about how to make an edit to this site.
+This page gives documentation about how to make an edit to this site. There are *two* main ways. Both methods require a github account, so if you do not already have one, go ahead and make one. To begin, we **strongly** reccoment adding your name under the 'People' tab as a way to familiarize yourself with the process. 
 
-## 1) Install `git`
+## ^^Quick and Easy^^
+
+On a page that you would like to edit, simply click the ':material-pencil:' icon at the heading you would like to edit. This will take you to a page where you can make an edit mark at the title.
+
+After having made your change to the `.md` file, don't hesitate to be verbose in describing the change you made. Once you submit the change as a pull-request, the change will be reviewed and then (likely) committed to the website. Thats it! :tada:
+
+## ^^Longer^^ (but more versatile way)
+
+For larger changes, it will likely be easier to actually get used to using github
+
+### 1) Install `git`
 If it's not already installed on your system, the first step is to install the `git` utility. This is what underlies github.com and most collaborative projects across the web. Follow the instructions at the below link to get started
 
 <https://docs.github.com/en/get-started/quickstart/set-up-git>
@@ -11,7 +21,7 @@ If it's not already installed on your system, the first step is to install the `
     Make sure to make a github account so that you can push 
     changes to public repositories
 
-## 2) Clone this Repository
+### 2) Clone this Repository
 
 On your system, open up a folder and change the directory (`cd` command) to wherever you would like this repository to be saved. Then clone this repository and `cd` into the directory!
 
@@ -21,7 +31,7 @@ git clone https://github.com/mcw-mstp/mcw-mstp.github.io.git
 cd mcw-mstp.github.io
 ```
 
-## 3) Create a New Working Branch
+### 3) Create a New Working Branch
 
 We now have to create a new banch. You can pick whatever name you like for this, and create the branch with the command
 
@@ -31,7 +41,7 @@ git checkout -b branch-name-here
 
 The `-b` option indicates that you are creating a new branch.
 
-## 4) Install mkdocs (Optional)
+### 4) Install mkdocs (Optional)
 
 !!! info inline end
     Installing this is only necessary to preview changes
@@ -57,7 +67,7 @@ pip install mkdocs-material-extensions
 
 If not, shoot me an email
 
-## 5) Make an edit!
+### 5) Make an edit!
 
 We suggest that the first edit is adding your name to the [contributers](/people.md) page! To do this, open the file `people.md` file in the docs folder in your favorite text editor. Then add your name using | as a dividers between table values.
 
@@ -72,7 +82,7 @@ We suggest that the first edit is adding your name to the [contributers](/people
     If you would like for the text in the background section to be broken up over multiple lines,
     make sure to include the `<br>` text where you would like a line break
 
-## 6) Push Changes to Github
+### 6) Push Changes to Github
 
 This section will perhaps have the *strangest* instructions for those new to `git`. Now that you have edited and saved your changes to `people.md`. The steps are:
 
@@ -80,7 +90,7 @@ This section will perhaps have the *strangest* instructions for those new to `gi
 2. `git commit -m "your message here in qoutes"`
 3. `git push origin branch-name-here`
 
-## 7) Make Pull Request for Official Site
+### 7) Make Pull Request for Official Site
 
 Finally, this last step submits your changes for review before it is *merged* with the main branch. To this, you can go to github.com and when you go to this repository, you should see the ability to click a green button that says "Compare & Pull Request". Follow the steps, and write a description of what your pull request changes on the site. This info will be reviewed and then merged with the site! That's it! 
 
@@ -93,7 +103,7 @@ Mkdocs is a very convienent tool for building documentation. For working with th
 * `mkdocs gh-deploy --force` - Build the documentation site. (This pushes the built site to the gh-pages branch). The force option is needed since we hace multiple pages under some of the main headers
 * `mkdocs -h` - Print help message and exit.
 
-## Project layout
+### Project layout
 
     mkdocs.yml    # The configuration file.
     docs/

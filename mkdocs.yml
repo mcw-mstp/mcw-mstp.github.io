@@ -1,6 +1,7 @@
-site_name: MCW MSTP Code
-site_url: httpe://www.google.com
-repo_url: https://github.com/mcw-mstp/mcw-mstp
+site_name: MCW MSTP Codes
+site_url: https://mcw-mstp.github.io/
+repo_url: https://github.com/mcw-mstp/mcw-mstp.github.io
+edit_uri: edit/main/docs
 
 nav:
     - Home: 
@@ -9,6 +10,9 @@ nav:
     - Singe Cell Seq: 
         - About: rna_seq/single_cell.md
         - Intro to scRNA seq: rna_seq/lect1/lect1.md
+    - ABACUS:
+        - About: abacus.md
+        - Resources: abacus_resources.md
     - Resources: resources.md
     - People: people.md
     - Contributing: contributing.md
@@ -28,6 +32,13 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_css:
   - stylesheets/extra.css
