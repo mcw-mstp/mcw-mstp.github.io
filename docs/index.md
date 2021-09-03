@@ -24,6 +24,7 @@ I was thinking it might be nice if people try the process of editing this site. 
 - [ ] Add previous Abacus resources
 - [ ] Maybe add survey results somewhere?
 - [ ] Figure out where tutorials should go
+- [ ] Make a logo
 
 
 Feel free to give feedback <smazurchuk@mcw.edu>
