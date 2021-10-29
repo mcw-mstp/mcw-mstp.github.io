@@ -14,7 +14,10 @@ nav:
         - About: abacus.md
         - Resources: abacus_resources.md
     - Resources: resources.md
-    - People: people.md
+    - People: 
+        - About: people/people.md
+        - Individual Pages:
+          - Stephen Mazurchuk: people/smazurchuk.md
     - Contributing: contributing.md
 
 theme: 
@@ -26,6 +29,7 @@ theme:
 markdown_extensions:
   - abbr
   - admonition
+  - attr_list
   - meta
   - pymdownx.details
   - pymdownx.superfences
