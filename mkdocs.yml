@@ -23,6 +23,7 @@ nav:
 theme: 
   name: material
   custom_dir: overrides
+  favicon: assets/codes_favicon.svg
   features:
     - navigation.tabs
 
