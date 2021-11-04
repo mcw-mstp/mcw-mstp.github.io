@@ -3,3 +3,11 @@
   --md-primary-fg-color--light: #28B67A;
   --md-primary-fg-color--dark:  #0E233C;
 }
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  fill: currentColor;
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
