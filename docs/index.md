@@ -1,3 +1,5 @@
+![Logo](assets/logo.svg){align=center width=200px}
+
 # Welcome to MSTP Codes :wave:
 
 This is a website to share information and resources about mcw mstp. We are
