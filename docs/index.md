@@ -27,6 +27,7 @@ I was thinking it might be nice if people try the process of editing this site. 
 - [ ] Maybe add survey results somewhere?
 - [ ] Figure out where tutorials should go
 - [ ] Make a logo
+- [ ] Auto-build the website following merged pull requests
 
 
 Feel free to give feedback <smazurchuk@mcw.edu>
