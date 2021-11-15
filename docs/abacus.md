@@ -18,8 +18,7 @@ Interact with us anytime on the ABACUS slack channel or shoot us an email just t
 | Date         | Title                          | Documents / Info |
 |--------------|--------------------------------|------------------|
 | September 9  | Introduction and Basics        |  [Intro Slides](assets/abacus_intro_9_2021.pdf), [dplyr  cheatsheet](assets/data-transformation.pdf), [tidy cheatsheet](assets/data-import.pdf)               |
-| September 16 | Data Handling                  | [TidyData](https://github.com/mcw-mstp/mcw-mstp.github.io/files/7532475/21.0916_ABACUS_tidytutorial.docx)
-                 |
+| September 16 | Data Handling                  | [TidyData](https://github.com/mcw-mstp/mcw-mstp.github.io/files/7532475/21.0916_ABACUS_tidytutorial.docx) | 
 | September 30 | Making Figures in R and Python |                  |
 | October 14   | Using the HPC                  |                  |
 | October 28   | Protein Models and Simulations |                  |
