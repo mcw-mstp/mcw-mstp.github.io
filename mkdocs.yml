@@ -13,7 +13,9 @@ nav:
     - ABACUS:
         - About: abacus.md
         - Resources: abacus_resources.md
-    - Resources: resources.md
+    - Resources: 
+        - About: resources/resources.md
+        - Pointers: resources/pointers.md
     - People: 
         - About: people/people.md
         - Individual Pages:
