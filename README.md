@@ -15,4 +15,11 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-Test push
+Glad you're here. To work on this repository, simply clone it! To see a local demo when working on the site make sure `mkdocs` is installed. 
+
+```
+$ git clone https://github.com/mcw-mstp/mcw-mstp.github.io.git
+$ cd mcw-mstp.github.io
+$ pip install mkdocs mkdocs-material mkdocs-material-extensions
+$ mkdocs serve
+```
