@@ -52,6 +52,9 @@ extra_css:
   - stylesheets/extra.css
 
 extra:
+  analytics:
+    provider: google
+    property: G-4EB03M9P81
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/mcw-mstp
