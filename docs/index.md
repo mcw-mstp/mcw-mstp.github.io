@@ -7,8 +7,8 @@ currently taking suggestions for pages and information that you would like
 be made available.
 
 !!! warning
-    This site is currently under construction and, as of now, is just 
-    for demo purposes
+    This site is activly being updated and some layouts might
+    change. 
 
 This site was built using [mkdocs](https://www.mkdocs.org) and uses the [material]() theme.
 
