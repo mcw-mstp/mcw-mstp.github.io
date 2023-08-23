@@ -15,7 +15,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-Glad you're here. To work on this repository, simply clone it! To see a local demo when working on the site make sure `mkdocs` is installed. 
+Glad you're here. To work on this repository, there are two options:
+
+1. You can simply edit any of the markdown (`.md`) files using the github online interface
+2. You can clone the repository! This is a more involved task, but can be a good learning experience for creating documentation. It also allows you to have a local live version to see updates in realtime as you are making them, rather than waitning to the comits to be accepted and rendered online (can take up to a day). To to this, follow the instructions on the website under the 'contributions' tab. 
+
+Cloning the repository can be done in the following way:
 
 ```
 $ git clone https://github.com/mcw-mstp/mcw-mstp.github.io.git
