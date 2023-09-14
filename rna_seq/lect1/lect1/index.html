@@ -8,11 +8,17 @@
       
       
       
-      
         <link rel="canonical" href="https://mcw-mstp.github.io/rna_seq/lect1/lect1/">
       
+      
+        <link rel="prev" href="../../single_cell/">
+      
+      
+        <link rel="next" href="../../../abacus/">
+      
+      
       <link rel="icon" href="../../../assets/codes_favicon.svg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
@@ -20,55 +26,52 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.db9e7362.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
-        
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
   
 
 
   
-
   
 
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-4EB03M9P81"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-4EB03M9P81",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-4EB03M9P81",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
-  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-4EB03M9P81"),document.addEventListener("DOMContentLoaded",function(){"undefined"!=typeof location$&&location$.subscribe(function(t){gtag("config","G-4EB03M9P81",{page_path:t.pathname})})})</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EB03M9P81"></script>
-
-
+    
     
     
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -83,15 +86,18 @@
     </div>
     <div data-md-component="announce">
       
-        <aside class="md-banner md-announce">
-          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
             
     Add your name to the 'People' section!
 
           </div>
+          
         </aside>
       
     </div>
+    
     
       
 
@@ -103,7 +109,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -125,22 +132,25 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -151,7 +161,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -160,11 +170,10 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/mcw-mstp/mcw-mstp.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/mcw-mstp/mcw-mstp.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -183,22 +192,24 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Home
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        Home
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -207,14 +218,87 @@
   
     
   
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../single_cell/" class="md-tabs__link">
+          
+  
+  Singe Cell Seq
 
+        </a>
+      </li>
+    
+  
 
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../abacus/" class="md-tabs__link">
+          
+  
+  ABACUS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../resources/resources/" class="md-tabs__link">
+          
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../people/people/" class="md-tabs__link">
+          
+  
+  People
+
+        </a>
+      </li>
+    
+  
+
+      
+        
   
   
   
     <li class="md-tabs__item">
-      <a href="../../single_cell/" class="md-tabs__link md-tabs__link--active">
-        Singe Cell Seq
+      <a href="../../../contributing/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
       </a>
     </li>
   
@@ -223,61 +307,18 @@
         
   
   
-
-
-  
-  
   
     <li class="md-tabs__item">
-      <a href="../../../abacus/" class="md-tabs__link">
-        ABACUS
+      <a href="../../../introPython/" class="md-tabs__link">
+        
+  
+    
+  
+  Intro to Python
+
       </a>
     </li>
   
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../resources/resources/" class="md-tabs__link">
-        Resources
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../people/people/" class="md-tabs__link">
-        People
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="../../../contributing/" class="md-tabs__link">
-      Contributing
-    </a>
-  </li>
 
       
     </ul>
@@ -296,6 +337,7 @@
                   <div class="md-sidebar__inner">
                     
 
+
   
 
 
@@ -310,11 +352,10 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/mcw-mstp/mcw-mstp.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/mcw-mstp/mcw-mstp.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -326,112 +367,143 @@
     
       
       
-      
-
   
   
   
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Home" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        Welcome
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../news/" class="md-nav__link">
-        News
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Singe Cell Seq
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Singe Cell Seq" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Singe Cell Seq
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Singe Cell Seq
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Singe Cell Seq
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../single_cell/" class="md-nav__link">
-        About
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
     
@@ -439,22 +511,35 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Intro to scRNA seq
+          
+  
+  <span class="md-ellipsis">
+    Intro to scRNA seq
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Intro to scRNA seq
+        
+  
+  <span class="md-ellipsis">
+    Intro to scRNA seq
+  </span>
+  
+
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -482,243 +567,333 @@
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          ABACUS
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="ABACUS" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          ABACUS
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ABACUS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ABACUS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../abacus/" class="md-nav__link">
-        About
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../abacus_resources/" class="md-nav__link">
-        Resources
+        
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          Resources
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Resources" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Resources
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../resources/resources/" class="md-nav__link">
-        About
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../resources/pointers/" class="md-nav__link">
-        Pointers
+        
+  
+  <span class="md-ellipsis">
+    Pointers
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          People
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="People" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          People
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    People
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            People
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../people/people/" class="md-nav__link">
-        About
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
   
   
   
     
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2">
-          Individual Pages
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Individual Pages" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
-          <span class="md-nav__icon md-icon"></span>
-          Individual Pages
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Individual Pages
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Individual Pages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../../people/smazurchuk/" class="md-nav__link">
-        Stephen Mazurchuk
+        
+  
+  <span class="md-ellipsis">
+    Stephen Mazurchuk
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../../../contributing/" class="md-nav__link">
-        Contributing
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introPython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro to Python
+  </span>
+  
+
       </a>
     </li>
   
@@ -736,6 +911,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -764,16 +940,17 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <a href="https://github.com/mcw-mstp/mcw-mstp.github.io/edit/main/docs/rna_seq/lect1/lect1.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="lecture-1">Lecture 1</h1>
+                  
+
+  
+  
+
+
+<h1 id="lecture-1">Lecture 1</h1>
 <p>These slides are part of a workshop by the Cui Lab on 6/21/21 about how to use R to analyze single-cell RNA sequencing data. It starts by going over the basics of scRNA-seq and how it differs from bulk RNA-seq. We'll then download a publicly available dataset and analyze it together using the attached script.</p>
 <p>Feel free to look at or <a href="https://mcw0-my.sharepoint.com/:p:/g/personal/smazurchuk_mcw_edu/EdcN_zorz-ZCjm8nmUtcm5wBfR54AZ4CE5--Pu6ePia28w?e=7vKgpg"><strong>download</strong></a> the slides below!</p>
 <iframe src="https://mcw0-my.sharepoint.com/personal/smazurchuk_mcw_edu/_layouts/15/Doc.aspx?sourcedoc={3aff0dd7-cf2b-42e6-8e6f-27994b5c9b9c}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="1000px" height="600px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
@@ -826,7 +1003,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Seurat expects the input files to be called &quot;barcodes.tsv.gz&quot;, &quot;features.tsv.gz&quot;, and &quot;matrix.mtx.gz&quot;</span>
 <span class="c1"># We first need to rename the downloaded files to make them match these names exactly</span>
 
-<span class="nf">file.rename</span><span class="p">(</span><span class="s">&quot;matrix_files/GSM3701181_GP33_day30_barcodes.tsv.gz&quot;</span><span class="p">,</span> <span class="s">&quot;matrix_files/barcodes.tsv.gz&quot;</span><span class="p">)</span>
+<span class="nf">file.rename</span><span class="p">(</span><span class="s">&quot;matrix_files/GSM3701181_GP33_day30_barcodes.tsv.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matrix_files/barcodes.tsv.gz&quot;</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Warning in file.rename("matrix_files/GSM3701181_GP33_day30_barcodes.tsv.gz", :
 ## cannot rename file 'matrix_files/GSM3701181_GP33_day30_barcodes.tsv.gz' to
@@ -834,7 +1011,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 
 ## [1] FALSE
 </code></pre>
-<div class="highlight"><pre><span></span><code><span class="nf">file.rename</span><span class="p">(</span><span class="s">&quot;matrix_files/GSM3701181_GP33_day30_genes.tsv.gz&quot;</span><span class="p">,</span> <span class="s">&quot;matrix_files/features.tsv.gz&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">file.rename</span><span class="p">(</span><span class="s">&quot;matrix_files/GSM3701181_GP33_day30_genes.tsv.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matrix_files/features.tsv.gz&quot;</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Warning in file.rename("matrix_files/GSM3701181_GP33_day30_genes.tsv.gz", :
 ## cannot rename file 'matrix_files/GSM3701181_GP33_day30_genes.tsv.gz' to
@@ -842,7 +1019,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 
 ## [1] FALSE
 </code></pre>
-<div class="highlight"><pre><span></span><code><span class="nf">file.rename</span><span class="p">(</span><span class="s">&quot;matrix_files/GSM3701181_GP33_day30_matrix.mtx.gz&quot;</span><span class="p">,</span> <span class="s">&quot;matrix_files/matrix.mtx.gz&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">file.rename</span><span class="p">(</span><span class="s">&quot;matrix_files/GSM3701181_GP33_day30_matrix.mtx.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;matrix_files/matrix.mtx.gz&quot;</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Warning in file.rename("matrix_files/GSM3701181_GP33_day30_matrix.mtx.gz", :
 ## cannot rename file 'matrix_files/GSM3701181_GP33_day30_matrix.mtx.gz' to
@@ -850,7 +1027,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 
 ## [1] FALSE
 </code></pre>
-<div class="highlight"><pre><span></span><code><span class="n">Cl13.raw</span> <span class="o">&lt;-</span> <span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span> <span class="o">=</span> <span class="s">&quot;matrix_files/&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">Cl13.raw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;matrix_files/&quot;</span><span class="p">)</span>
 
 <span class="c1"># Cl13.raw is currently stored as a matrix object in R (matrix of genes and cells)</span>
 <span class="c1"># We can check how many cells and genes are available for analysis with the dim() function</span>
@@ -867,7 +1044,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 
 <span class="c1"># We need to make a Seurat object from the matrix object Cl13.raw</span>
 
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">Cl13.raw</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="s">&quot;Cl13&quot;</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cl13.raw</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Cl13&quot;</span><span class="p">)</span>
 
 <span class="c1"># You can also call dim() on Seurat objects to see how many genes and cells are in your dataset</span>
 <span class="nf">dim</span><span class="p">(</span><span class="n">Cl13</span><span class="p">)</span>
@@ -881,10 +1058,10 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <span class="c1"># First, have Seurat calculate what percentage of the transcriptome of each cell comes from mitochondrial genes</span>
 <span class="c1"># Cells with high percentages of mitochondrial mRNA may be apoptotic</span>
 <span class="c1"># Note that all mitochondrial genes being with &quot;mt-&quot;, so Seurat can easily find these genes</span>
-<span class="n">Cl13</span><span class="o">$</span><span class="n">percent.mt</span> <span class="o">&lt;-</span> <span class="nf">PercentageFeatureSet</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">Cl13</span><span class="p">,</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">&quot;^mt-&quot;</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="o">$</span><span class="n">percent.mt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">PercentageFeatureSet</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;^mt-&quot;</span><span class="p">)</span>
 
 <span class="c1"># View the number of unique genes (nFeature_RNA), number of total transcripts (nCount_RNA), and percent of mitochondrial reads (percent.mt) for each cell</span>
-<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;nFeature_RNA&quot;</span><span class="p">,</span> <span class="s">&quot;nCount_RNA&quot;</span><span class="p">,</span> <span class="s">&quot;percent.mt&quot;</span><span class="p">))</span>
+<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;nFeature_RNA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nCount_RNA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;percent.mt&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Quality%20control-1.png" /><!-- --></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Notice how some cells have many more unique genes than most cells</span>
@@ -897,19 +1074,19 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <span class="c1"># Live cells will have a low percentage of mitochondrial mRNA, so we also use this metric to filter cells</span>
 <span class="c1"># Typical cutoffs for percent.mt are 5-10% depending on how stringent you want your quality control to be and how many cells you can afford to filter out</span>
 
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="n">nFeature_RNA</span> <span class="o">&gt;</span> <span class="m">200</span> <span class="o">&amp;</span> <span class="n">nFeature_RNA</span> <span class="o">&lt;</span> <span class="m">2500</span> <span class="o">&amp;</span> <span class="n">percent.mt</span> <span class="o">&lt;</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nFeature_RNA</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nFeature_RNA</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2500</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">percent.mt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Normalize the data - divides the number of reads for each gene in a cell by the total number of reads in that cell</span>
 <span class="c1"># Normalization makes reads comparable betwwen cells that had different read depth during sequencing</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">Cl13</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">NormalizeData</span><span class="p">(</span><span class="n">Cl13</span><span class="p">)</span>
 
 <span class="c1"># Select highly variable features - these will be used for PCA/UMAP</span>
 <span class="c1"># Running PCA/UMAP on all genes is computationally intensive and doesn&#39;t really improve results</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">Cl13</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">Cl13</span><span class="p">)</span>
 
 <span class="c1"># You can examine the variable features on a plot if you want to see them</span>
 <span class="nf">LabelPoints</span><span class="p">(</span><span class="nf">VariableFeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">),</span>
-            <span class="n">points</span> <span class="o">=</span> <span class="nf">head</span><span class="p">(</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">Cl13</span><span class="p">),</span> <span class="m">10</span><span class="p">))</span>
+<span class="w">            </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">head</span><span class="p">(</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">Cl13</span><span class="p">),</span><span class="w"> </span><span class="m">10</span><span class="p">))</span>
 </code></pre></div>
 <pre><code>## Warning: Transformation introduced infinite values in continuous x-axis
 
@@ -917,17 +1094,17 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 </code></pre>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Normalization-1.png" /><!-- --></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Load genes for cell cycle regression</span>
-<span class="n">CC_genes</span> <span class="o">&lt;-</span> <span class="n">Seurat</span><span class="o">::</span><span class="n">cc.genes.updated.2019</span>
+<span class="n">CC_genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Seurat</span><span class="o">::</span><span class="n">cc.genes.updated.2019</span>
 
 <span class="c1"># These genes are currently in human gene format (all caps)</span>
 <span class="c1"># We need to change them to mouse gene format (first letter caps, all other letters lowercase)</span>
-<span class="n">CC_genes</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="n">CC_genes</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
-  <span class="nf">paste0</span><span class="p">(</span>
-  <span class="nf">substring</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
-  <span class="nf">tolower</span><span class="p">(</span><span class="nf">substring</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">2</span><span class="p">)))})</span>
+<span class="n">CC_genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">CC_genes</span><span class="p">,</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="w">  </span><span class="nf">paste0</span><span class="p">(</span>
+<span class="w">  </span><span class="nf">substring</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">  </span><span class="nf">tolower</span><span class="p">(</span><span class="nf">substring</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)))})</span>
 
 <span class="c1"># Calculate the cell cycle phase of cells</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">CellCycleScoring</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">s.features</span> <span class="o">=</span> <span class="n">CC_genes</span><span class="o">$</span><span class="n">s.genes</span><span class="p">,</span> <span class="n">g2m.features</span> <span class="o">=</span> <span class="n">CC_genes</span><span class="o">$</span><span class="n">g2m.genes</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">CellCycleScoring</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">s.features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CC_genes</span><span class="o">$</span><span class="n">s.genes</span><span class="p">,</span><span class="w"> </span><span class="n">g2m.features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CC_genes</span><span class="o">$</span><span class="n">g2m.genes</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Warning: The following features are not present in the object: Pimreg, Jpt1, not
 ## searching for symbol synonyms
@@ -937,7 +1114,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <span class="c1"># Scale the data - scales the expression of each gene across all cells to a range centered at 0 (usually -2 to +2)</span>
 <span class="c1"># While scaling, we&#39;ll also regress out cell cycle phase scores so these don&#39;t impact data scaling</span>
 <span class="c1"># By default, Seurat only scales variable genes, which we found with the FindVariableFeatures() function earlier</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">ScaleData</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">vars.to.regress</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;S.Score&quot;</span><span class="p">,</span> <span class="s">&quot;G2M.Score&quot;</span><span class="p">))</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ScaleData</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">vars.to.regress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S.Score&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;G2M.Score&quot;</span><span class="p">))</span>
 </code></pre></div>
 <pre><code>## Regressing out S.Score, G2M.Score
 
@@ -949,7 +1126,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># We need to generate a PCA plot before we contruct a UMAP plot</span>
 <span class="c1"># By default, 50 PCs are calculated; you can choose to set fewer PCs manually</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">npcs</span> <span class="o">=</span> <span class="m">30</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">RunPCA</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">npcs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## PC_ 1 
 ## Positive:  Ccl5, Gzmb, Gzma, Cx3cr1, Zeb2, Ahnak, Lgals1, Ccl4, Klre1, S1pr5 
@@ -987,13 +1164,13 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 ##     Rpl23a, Samhd1, Rpl18, Rpl3, Ifit1bl1, Rps6, Rpl36, Rpl41, Rps18, Plac8 
 ##     Rplp2, Rps16, Rps10, Rplp1, Epsti1, Rplp0, Ifit1, Crip1, Rps19, Rpl4
 </code></pre>
-<div class="highlight"><pre><span></span><code><span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Computing nearest neighbor graph
 
 ## Computing SNN
 </code></pre>
-<div class="highlight"><pre><span></span><code><span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">FindClusters</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.3</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
 ## 
@@ -1005,7 +1182,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 ## Number of communities: 5
 ## Elapsed time: 0 seconds
 </code></pre>
-<div class="highlight"><pre><span></span><code><span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">RunUMAP</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
 ## To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
@@ -1045,7 +1222,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 
 <span class="c1"># Resolution in FindClusters() doesn&#39;t affect the shape of the clusters but does affect the coloring (cluster assignment) of cells</span>
 <span class="c1"># Look at what happens when we change only the resolution and recreate the UMAP plot</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">FindClusters</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
 ## 
@@ -1061,22 +1238,22 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/UMAP-2.png" /><!-- --></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Alternatively, we can color the cells based on their cell cycle phase instead of their cluster identity</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">group.by</span> <span class="o">=</span> <span class="s">&quot;Phase&quot;</span><span class="p">)</span>
+<span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">group.by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Phase&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/UMAP-3.png" /><!-- --></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Always test to make sure that your cell populations are pure, even if you sequenced FACS-sorted cells (sorting is never perfect)</span>
 <span class="c1"># In this case, the cells are supposed to be LCMV GP33-specific CD8 T cells</span>
 <span class="c1"># We can examine identity genes with different plots</span>
-<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cd8a&quot;</span><span class="p">,</span> <span class="s">&quot;Cd3e&quot;</span><span class="p">))</span>
+<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cd8a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cd3e&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Cell%20purity-1.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cd8a&quot;</span><span class="p">,</span> <span class="s">&quot;Cd3e&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cd8a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cd3e&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Cell%20purity-2.png" /><!-- --></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># All clusters express high levels of Cd3e and CD8a, suggesting that these cells are CD8 T cells</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># If we don&#39;t know what genes are important, we can analyze differentially expressed genes (DEGs) in each cluster</span>
-<span class="n">Cl13_markers</span> <span class="o">&lt;-</span> <span class="nf">FindAllMarkers</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">only.pos</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="n">Cl13_markers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">FindAllMarkers</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">only.pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Calculating cluster 0
 
@@ -1097,7 +1274,7 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Setting only.pos = T tells Seurat to only look for genes that are upregulated in each cluster</span>
 
 <span class="c1"># Let&#39;s examine the top 10 DEGs per cluster</span>
-<span class="n">Cl13_markers</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="n">wt</span> <span class="o">=</span> <span class="n">avg_log2FC</span><span class="p">)</span>
+<span class="n">Cl13_markers</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">top_n</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">wt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">avg_log2FC</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## # A tibble: 30 × 7
 ## # Groups:   cluster [3]
@@ -1118,16 +1295,16 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Note that gene names don&#39;t always match protein names (Pdcd1 = PD-1, Slamf6 = Ly108)</span>
 
 <span class="c1"># We can plot some of these genes to visualize how specific they are to each cluster</span>
-<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span> <span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span> <span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span> <span class="s">&quot;Zeb2&quot;</span><span class="p">,</span> <span class="s">&quot;Slamf6&quot;</span><span class="p">,</span> <span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
+<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Zeb2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slamf6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Differential%20gene%20expression%20analysis-1.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">DotPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span> <span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span> <span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span> <span class="s">&quot;Zeb2&quot;</span><span class="p">,</span> <span class="s">&quot;Slamf6&quot;</span><span class="p">,</span> <span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">DotPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Zeb2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slamf6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Differential%20gene%20expression%20analysis-2.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span> <span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span> <span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span> <span class="s">&quot;Zeb2&quot;</span><span class="p">,</span> <span class="s">&quot;Slamf6&quot;</span><span class="p">,</span> <span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Zeb2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slamf6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Differential%20gene%20expression%20analysis-3.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">RidgePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span> <span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span> <span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span> <span class="s">&quot;Zeb2&quot;</span><span class="p">,</span> <span class="s">&quot;Slamf6&quot;</span><span class="p">,</span> <span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">RidgePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Zeb2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slamf6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Il7r&quot;</span><span class="p">))</span>
 </code></pre></div>
 <pre><code>## Picking joint bandwidth of 0.144
 
@@ -1148,10 +1325,10 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <span class="c1"># Cluster 2 - Progenitor cells</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># To make figures easier to follow, we can rename the clusters in our Seurat object</span>
-<span class="n">Cl13</span> <span class="o">&lt;-</span> <span class="nf">RenameIdents</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span>
-                     <span class="s">&quot;0&quot;</span> <span class="o">=</span> <span class="s">&quot;Exhausted&quot;</span><span class="p">,</span>
-                     <span class="s">&quot;1&quot;</span> <span class="o">=</span> <span class="s">&quot;Effector&quot;</span><span class="p">,</span>
-                     <span class="s">&quot;2&quot;</span> <span class="o">=</span> <span class="s">&quot;Progenitor&quot;</span><span class="p">)</span>
+<span class="n">Cl13</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">RenameIdents</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span>
+<span class="w">                     </span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Exhausted&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Effector&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Progenitor&quot;</span><span class="p">)</span>
 
 <span class="c1"># Check to make sure the new names are okay</span>
 <span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">)</span>
@@ -1170,25 +1347,25 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <span class="c1"># UMAP</span>
 <span class="c1"># Most plotting functions in Seurat allow you to easily change the colors of the clusters as well</span>
 <span class="c1"># Remember that colors are specified in the order that the clusters are listed (by default, clusters are arranged in alphabetical order)</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gray50&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;skyblue&quot;</span><span class="p">))</span>
+<span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;gray50&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;skyblue&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Save%20figures-1.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/UMAP.png&quot;</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/UMAP.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dpi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Saving 7 x 5 in image
 </code></pre>
 <div class="highlight"><pre><span></span><code><span class="c1"># dpi specifies the image resolution for PNG files; always save at 300 dpi (the default is 72 dpi, which is lower resolution and not acceptable for publications)</span>
 
 <span class="c1"># UMAP colored by cell cycle phase</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">group.by</span> <span class="o">=</span> <span class="s">&quot;Phase&quot;</span><span class="p">)</span>
+<span class="nf">DimPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">group.by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Phase&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Save%20figures-2.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/UMAP_cell_cycle.png&quot;</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/UMAP_cell_cycle.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dpi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Saving 7 x 5 in image
 </code></pre>
 <div class="highlight"><pre><span></span><code><span class="c1"># FeaturePlot to verify cell purity</span>
-<span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cd3e&quot;</span><span class="p">,</span> <span class="s">&quot;Cd8a&quot;</span><span class="p">))</span>
+<span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Cd3e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cd8a&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Save%20figures-3.png" /><!-- --></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/Cell_purity_FeaturePlot.png&quot;</span><span class="p">)</span>
@@ -1197,19 +1374,19 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 </code></pre>
 <div class="highlight"><pre><span></span><code><span class="c1"># VlnPlot of major markers defining each subset</span>
 <span class="c1"># Rememer to keep the colors you pick consistent if you don&#39;t want to use the default colors</span>
-<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Pdcd1&quot;</span><span class="p">,</span> <span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span> <span class="s">&quot;Slamf6&quot;</span><span class="p">),</span> <span class="n">cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gray50&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;skyblue&quot;</span><span class="p">))</span>
+<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Pdcd1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slamf6&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;gray50&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;skyblue&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Save%20figures-4.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/Cluster_markers_VlnPlot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="m">300</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/Cluster_markers_VlnPlot.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dpi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>## Saving 7 x 5 in image
 </code></pre>
 <div class="highlight"><pre><span></span><code><span class="c1"># DotPlot of differentially expressed genes from FindAllMarkers() that may be of interest</span>
 <span class="c1"># We&#39;ll manually set the height and width of this file so the text on the x-axis fits properly</span>
-<span class="nf">DotPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Pdcd1&quot;</span><span class="p">,</span> <span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span> <span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span> <span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span> <span class="s">&quot;S1pr5&quot;</span><span class="p">,</span> <span class="s">&quot;Tbx21&quot;</span><span class="p">,</span> <span class="s">&quot;Slamf6&quot;</span><span class="p">,</span> <span class="s">&quot;Il7r&quot;</span><span class="p">,</span> <span class="s">&quot;Tcf7&quot;</span><span class="p">))</span>
+<span class="nf">DotPlot</span><span class="p">(</span><span class="n">Cl13</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Pdcd1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cxcr6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nr4a2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cx3cr1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;S1pr5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tbx21&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Slamf6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Il7r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tcf7&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../scRNAseq_analysis_files/figure-gfm/Save%20figures-5.png" /><!-- --></p>
-<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/Cluster_markers_DotPlot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="m">300</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">9</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;Figures/Cluster_markers_DotPlot.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dpi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
 
 <span class="c1"># 5 figures in 1 hour</span>
 <span class="c1"># Price: $0</span>
@@ -1222,78 +1399,46 @@ makes it easy to keep track of where you want to skip to in your script.</p>
 <span class="c1">#   ggpubr - easy statistical analysis for violin or box plots</span>
 <span class="c1">#   novoSpaRc - de novo or atlas-based spatial reconstruction of scRNA-seq data (currently only available as a Python package)</span>
 </code></pre></div>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
-        
-<footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../single_cell/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              About
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../abacus/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              About
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
+    
+    
+    
     
       
       
-        
-        
-      
-      <a href="https://github.com/mcw-mstp" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-  </div>
-
+    <a href="https://github.com/mcw-mstp" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -1302,10 +1447,11 @@ makes it easy to keep track of where you want to skip to in your script.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
