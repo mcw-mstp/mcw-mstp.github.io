@@ -21,6 +21,7 @@ nav:
         - Individual Pages:
           - Stephen Mazurchuk: people/smazurchuk.md
     - Contributing: contributing.md
+    - Intro to Python: introPython.md
 
 theme: 
   name: material
