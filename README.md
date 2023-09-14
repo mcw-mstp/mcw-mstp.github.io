@@ -28,3 +28,4 @@ $ cd mcw-mstp.github.io
 $ pip install mkdocs mkdocs-material mkdocs-material-extensions
 $ mkdocs serve
 ```
+Note: You will likely need to install `mkdocs-material`
