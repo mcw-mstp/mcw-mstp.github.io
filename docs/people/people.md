@@ -19,3 +19,4 @@ Below is a list of people who you can reach out to and provide some background.
 | Joe | jhennessey@mcw.edu | I don't know much about coding, please don't reach out to me |
 | Andrew | acao@mcw.edu | I have done half of the R tutorial |
 |Malone|mfriedman@mcw.edu||
+| Katie | ktaquet@mcw.edu | |
